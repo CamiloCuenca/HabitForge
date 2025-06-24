@@ -31,12 +31,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.CamiloCuencaDev.habitforge.ui.theme.GreenPrimary
 import com.CamiloCuencaDev.habitforge.R
 
-@Preview(showBackground = true, widthDp = 360, heightDp = 640)
+
 @Composable
-fun WelcomeScreen(onButtonClick: () -> Unit = {}) {
+fun WelcomeScreen(navController: NavHostController, onButtonClick: () -> Unit = {}) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -60,7 +61,7 @@ fun WelcomeScreen(onButtonClick: () -> Unit = {}) {
         ) {
             CustomButton(
                 text = "Iniciar Sesión",
-                onClick = onButtonClick,
+                onClick = {navController.navigate("SignIn")},
                 modifier = Modifier.weight(1f)
             )
 

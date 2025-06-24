@@ -43,14 +43,10 @@ fun CustomButtonSecondary(
         enabled = enabled,
         shape = RoundedCornerShape(12.dp),
         colors = ButtonDefaults.outlinedButtonColors(
-            // Para OutlinedButton, el containerColor suele ser transparente por defecto.
-            // Puedes ajustarlo si necesitas un fondo ligeramente diferente al de la superficie.
-            // containerColor = Color.Transparent, // Puedes omitirlo o ajustarlo
-            contentColor = GreenPrimary // Color del texto y el icono (si lo tuviera)
+            contentColor = GreenPrimary
         ),
-        border = BorderStroke(ButtonDefaults.outlinedButtonBorder.width, GreenPrimary) // Define el borde
-        // Alternativamente, para un borde más simple:
-        // border = BorderStroke(1.dp, GreenPrimary)
+
+        border = BorderStroke(1.dp, GreenPrimary)
     ) {
         Text(text)
     }

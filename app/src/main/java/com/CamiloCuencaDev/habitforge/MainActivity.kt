@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.CamiloCuencaDev.habitforge.ui.SignIn.SignIn
 import com.CamiloCuencaDev.habitforge.ui.WelcomeScreen.WelcomeScreen
 import com.CamiloCuencaDev.habitforge.ui.theme.HabitForgeTheme
 
@@ -26,7 +27,10 @@ class MainActivity : ComponentActivity() {
 
             NavHost(navController, startDestination = "welcome") {
                 composable("welcome") {
-                    WelcomeScreen()
+                    WelcomeScreen(navController)
+                }
+                composable("SignIn"){
+                    SignIn()
                 }
             }
 
