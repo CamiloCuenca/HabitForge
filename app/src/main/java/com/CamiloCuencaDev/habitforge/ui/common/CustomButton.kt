@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.CamiloCuencaDev.habitforge.ui.theme.BlueSecondary
 import com.CamiloCuencaDev.habitforge.ui.theme.GreenPrimary
 
 @Composable
@@ -30,6 +31,7 @@ fun CustomButton(
         Text(text)
     }
 }
+
 @Composable
 fun CustomButtonSecondary(
     text: String,
@@ -50,4 +52,22 @@ fun CustomButtonSecondary(
     ) {
         Text(text)
     }
+}
+
+@Composable
+fun CustomButtonTertiary(
+    text: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    enabled: Boolean = true
+) {
+   Button(
+       onClick = onClick,
+       modifier = modifier,
+       enabled = enabled,
+       colors = ButtonDefaults.buttonColors(
+           containerColor = BlueSecondary
+       )) {
+       Text(text)
+   }
 }
