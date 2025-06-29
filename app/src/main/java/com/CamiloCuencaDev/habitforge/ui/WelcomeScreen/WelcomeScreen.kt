@@ -95,7 +95,7 @@ fun WelcomeText() {
 @Composable
 fun ImageWelcome(){
     val imageModifier = Modifier
-        .size(250.dp)
+        .size(350.dp)
 
     Image(
         painter = painterResource(id = R.drawable.img_welcome),

@@ -6,9 +6,13 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -22,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.CamiloCuencaDev.habitforge.R
+import com.CamiloCuencaDev.habitforge.ui.common.CustomHyperlink
 import com.CamiloCuencaDev.habitforge.ui.common.ScreenTitle
 
 
@@ -32,7 +37,7 @@ fun SignInPreview() {
 }
 
 @Composable
-fun SignIn(navController: NavHostController?){
+fun SignIn(navController: NavHostController?) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -42,27 +47,43 @@ fun SignIn(navController: NavHostController?){
     ) {
 
         ScreenTitle(title = "Inicio de Sesión")
+        Spacer(modifier = Modifier.height(20.dp))
+
 
         ImageSignIn()
 
-       CustomTextField(
+        CustomTextField(
             textState = "Ingrese su email",
             label = "Email",
             onTextChange = { newText -> /* lógica para manejar el cambio de texto */ }
-       )
+        )
+
+        Spacer(modifier = Modifier.height(15.dp))
+
+        CustomTextField(
+            textState = "Ingrese su password",
+            label = "password",
+            onTextChange = { newText -> /* lógica para manejar el cambio de texto */ }
+        )
+
+        Box(
+            modifier = Modifier.fillMaxWidth().padding(end = 35.dp),
+            contentAlignment = Alignment.CenterEnd
+        ) {
+            CustomHyperlink("Olvidé mi contraseña") { navController?.navigate("Home") }
+        }
 
         CustomButtonTertiary(
             text = "Continuar",
             onClick = { navController?.navigate("Home") }
         )
     }
-
 }
 
 @Composable
 fun ImageSignIn(){
     val imageModifier = Modifier
-        .size(250.dp)
+        .size(350.dp)
     Image(
         painter = painterResource(id = R.drawable.img_login),
         contentDescription = null,
