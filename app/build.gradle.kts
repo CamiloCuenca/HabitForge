@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
     implementation("androidx.navigation:navigation-compose:2.9.0")
+    implementation ("androidx.compose.material:material-icons-extended:1.6.0")
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)

@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.CamiloCuencaDev.habitforge.ui.Home.Home
+import com.CamiloCuencaDev.habitforge.ui.SignIn.ForgotPassword
 import com.CamiloCuencaDev.habitforge.ui.SignIn.SignIn
 import com.CamiloCuencaDev.habitforge.ui.WelcomeScreen.Welcome
 
@@ -26,10 +27,13 @@ class MainActivity : ComponentActivity() {
                 composable("SignIn"){
                     SignIn(navController)
                 }
-
                 composable("Home"){
                     Home(navController)
                 }
+                composable("ForgotPassword"){
+                    ForgotPassword(navController)
+                }
+
             }
 
         }

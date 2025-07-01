@@ -16,6 +16,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -31,17 +35,11 @@ import com.CamiloCuencaDev.habitforge.ui.common.ScreenTitle
 
 
 @Composable
-@Preview(showBackground = true)
-fun SignInPreview() {
-    SignIn(navController = null)
-}
-
-@Composable
-fun SignIn(navController: NavHostController?) {
+fun SignIn(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -52,30 +50,34 @@ fun SignIn(navController: NavHostController?) {
 
         ImageSignIn()
 
+        var email by remember { mutableStateOf("") }
         CustomTextField(
-            textState = "Ingrese su email",
+            textState =  email,
+            plecholder = "Ingrese su email",
             label = "Email",
-            onTextChange = { newText -> /* lógica para manejar el cambio de texto */ }
+            onTextChange = { newText -> email = newText }
         )
 
         Spacer(modifier = Modifier.height(15.dp))
 
-        CustomTextField(
-            textState = "Ingrese su password",
-            label = "password",
-            onTextChange = { newText -> /* lógica para manejar el cambio de texto */ }
-        )
+       var password by remember { mutableStateOf("") }
+       CustomTextField(
+           textState = password,
+           plecholder = "Ingrese su contraseña",
+           label = "password",
+           onTextChange = { newText -> password = newText }
+       )
 
         Box(
             modifier = Modifier.fillMaxWidth().padding(end = 35.dp),
             contentAlignment = Alignment.CenterEnd
         ) {
-            CustomHyperlink("Olvidé mi contraseña") { navController?.navigate("Home") }
+            CustomHyperlink("Olvidé mi contraseña") { navController.navigate("ForgotPassword") }
         }
 
         CustomButtonTertiary(
             text = "Continuar",
-            onClick = { navController?.navigate("Home") }
+            onClick = { navController.navigate("Home") }
         )
     }
 }
