@@ -8,19 +8,18 @@ import com.CamiloCuencaDev.habitforge.ui.theme.GreenPrimaryLight
 import com.CamiloCuencaDev.habitforge.ui.theme.Grey80
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
-import com.CamiloCuencaDev.habitforge.ui.theme.Pink80
 
 @Composable
 fun CustomTextField(
     textState: String,
     label: String,
     onTextChange: (String) -> Unit,
-    plecholder: String ,
+    placeholder: String,
 ) {
     TextField(
         value = textState,
         onValueChange = onTextChange,
-        placeholder = { Text(plecholder) },
+        placeholder = { Text(placeholder) },
         label = { Text(label) },
         colors = androidx.compose.material3.TextFieldDefaults.colors(
             cursorColor = GreenPrimary,

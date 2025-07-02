@@ -1,6 +1,7 @@
 package com.CamiloCuencaDev.habitforge.ui.SignIn
 
 import CustomButtonTertiary
+import CustomPasswordField
 import CustomTextField
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -10,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -40,26 +40,28 @@ fun ForgotPassword(navController: NavHostController){
 
         var code by remember { mutableStateOf("") }
         CustomTextField(textState = "Código",
-            plecholder = "Ingrese el código",
+            placeholder = "Ingrese el código",
             label = "Codigo de Verificación",
             onTextChange = { nexText -> code = nexText})
         Spacer(modifier = Modifier.height(15.dp))
 
         var password by remember { mutableStateOf("") }
-        CustomTextField(textState = "Contraseña",
-            plecholder = "Nueva Contraseña",
-            label = "Contraseña",
-            onTextChange = { newText -> password = newText }
+        CustomPasswordField(
+            password = password,
+            label = "password",
+            onPasswordChange = { newText -> password = newText },
+            placeholder = "Ingrese su nueva contraseña",
         )
         Spacer(modifier = Modifier.height(15.dp))
 
 
         var password2 by remember { mutableStateOf("") }
 
-        CustomTextField(textState = "Contraseña",
-            plecholder = "Repite la Contraseña",
-            label = "Contraseña",
-            onTextChange = { newText -> password2 = newText }
+        CustomPasswordField(
+            password = password,
+            label = "password",
+            onPasswordChange = { newText -> password2 = newText },
+            placeholder = "Ingrese su nueva contraseña",
         )
         Spacer(modifier = Modifier.height(15.dp))
 
