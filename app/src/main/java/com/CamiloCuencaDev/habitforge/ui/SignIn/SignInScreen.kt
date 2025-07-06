@@ -31,6 +31,7 @@ import com.CamiloCuencaDev.habitforge.ui.common.TopAppBar
 
 @Composable
 fun SignIn(navController: NavHostController) {
+    TopAppBar("Inicio de Sesión")
 
     Column(
         modifier = Modifier
@@ -38,8 +39,6 @@ fun SignIn(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        TopAppBar("Inicio de Sesión")
-        Spacer(modifier = Modifier.height(20.dp))
 
 
         ImageSignIn()

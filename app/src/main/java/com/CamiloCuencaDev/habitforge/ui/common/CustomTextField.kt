@@ -1,3 +1,4 @@
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -8,6 +9,7 @@ import com.CamiloCuencaDev.habitforge.ui.theme.GreenPrimaryLight
 import com.CamiloCuencaDev.habitforge.ui.theme.Grey80
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.ui.Modifier
 
 @Composable
 fun CustomTextField(
@@ -78,5 +80,27 @@ fun CustomPasswordField(
             focusedTextColor = GreenDark,
             disabledTextColor = GreenPrimaryLight
         )
+    )
+}
+
+@Composable
+fun SearchTextField(
+    query: String,
+    onQueryChange: (String) -> Unit,
+    placeholder: String = "Buscar..."
+) {
+    TextField(
+        value = query,
+        onValueChange = onQueryChange,
+        placeholder = {Text(placeholder)},
+        trailingIcon = {
+            androidx.compose.material3.IconButton(onClick = {}) {
+                androidx.compose.material3.Icon(
+                    imageVector = androidx.compose.material.icons.Icons.Filled.Search,
+                    contentDescription = null
+                )
+            }
+        }
+
     )
 }

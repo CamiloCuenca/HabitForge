@@ -28,7 +28,7 @@ import com.CamiloCuencaDev.habitforge.ui.common.TopAppBar
 
 @Composable
 fun ForgotPassword(navController: NavHostController){
-
+    TopAppBar("Recuperación de contraseña")
 
 
     Column (
@@ -37,7 +37,6 @@ fun ForgotPassword(navController: NavHostController){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        TopAppBar("Recuperación de contraseña")
 
         ImageForgotPassword()
 
