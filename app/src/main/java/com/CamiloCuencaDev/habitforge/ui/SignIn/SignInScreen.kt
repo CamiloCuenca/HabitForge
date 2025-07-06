@@ -26,19 +26,19 @@ import androidx.navigation.NavHostController
 import com.CamiloCuencaDev.habitforge.R
 import com.CamiloCuencaDev.habitforge.ui.common.CustomHyperlink
 import com.CamiloCuencaDev.habitforge.ui.common.ScreenTitle
+import com.CamiloCuencaDev.habitforge.ui.common.TopAppBar
 
 
 @Composable
 fun SignIn(navController: NavHostController) {
+
     Column(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(10.dp),
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-
-        ScreenTitle(title = "Inicio de Sesión")
+        TopAppBar("Inicio de Sesión")
         Spacer(modifier = Modifier.height(20.dp))
 
 

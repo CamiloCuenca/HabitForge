@@ -23,18 +23,21 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.CamiloCuencaDev.habitforge.R
 import com.CamiloCuencaDev.habitforge.ui.common.ScreenTitle
+import com.CamiloCuencaDev.habitforge.ui.common.TopAppBar
 
 
 @Composable
 fun ForgotPassword(navController: NavHostController){
+
+
+
     Column (
         modifier = Modifier
-            .fillMaxSize()
-            .padding(10.dp),
+            .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        ScreenTitle(title= "Recuperación de contraseña")
+        TopAppBar("Recuperación de contraseña")
 
         ImageForgotPassword()
 
