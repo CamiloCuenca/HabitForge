@@ -98,7 +98,7 @@ fun ImageWelcome(){
         .size(350.dp)
 
     Image(
-        painter = painterResource(id = R.drawable.img_welcome),
+        painter = painterResource(id = R.drawable.logo),
         contentDescription = null,
         alignment = Alignment.Center,
         modifier = imageModifier,
