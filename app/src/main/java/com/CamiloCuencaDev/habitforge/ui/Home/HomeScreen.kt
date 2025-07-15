@@ -15,47 +15,55 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.CamiloCuencaDev.habitforge.ui.common.ScreenTitle
+import com.CamiloCuencaDev.habitforge.ui.common.MyNavigationBar
 import com.CamiloCuencaDev.habitforge.ui.common.TopAppBar
+
+import androidx.compose.material3.Scaffold
 
 @Composable
 fun Home(navController: NavHostController) {
+    Scaffold(
+        topBar = { TopAppBar("Home") },
+        bottomBar = { MyNavigationBar(
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-
-        ) {
-        TopAppBar("Home")
-
-        Box(
+        ) } // Tu barra inferior
+    ) { paddingValues ->
+        // Tu contenido principal
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 15.dp),
-            contentAlignment = Alignment.TopStart
-
-
+                .fillMaxSize()
+                .padding(paddingValues),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Column(
-                verticalArrangement = Arrangement.spacedBy(8.dp),
-                modifier = Modifier.padding(8.dp)
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(top = 15.dp),
+                contentAlignment = Alignment.TopStart
             ) {
-                Text(text = "Busca tu hiabito", fontSize = 20.sp)
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                    modifier = Modifier.padding(8.dp)
+                ) {
+                    Text(text = "Busca tu hábito", fontSize = 20.sp)
 
-                var search by remember { mutableStateOf("") }
-                SearchTextField(
-                    query = search,
-                    onQueryChange = { newText -> search = newText },
-                    placeholder = "Buscar.."
-                )
+                    var search by remember { mutableStateOf("") }
+                    SearchTextField(
+                        query = search,
+                        onQueryChange = { newText -> search = newText },
+                        placeholder = "Buscar..."
+                    )
+
+                    Text(
+                        text = "Mis hábitos",
+                        fontSize = 20.sp,
+                        modifier = Modifier.padding(top = 30.dp)
+                    )
+                }
             }
         }
-
     }
 }
-
