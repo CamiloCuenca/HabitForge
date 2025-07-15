@@ -41,7 +41,8 @@ fun ForgotPassword(navController: NavHostController){
         ImageForgotPassword()
 
         var code by remember { mutableStateOf("") }
-        CustomTextField(textState = "Código",
+        CustomTextField(
+            textState = code,
             placeholder = "Ingrese el código",
             label = "Codigo de Verificación",
             onTextChange = { nexText -> code = nexText})

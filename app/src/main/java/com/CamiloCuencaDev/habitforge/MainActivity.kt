@@ -24,13 +24,13 @@ class MainActivity : ComponentActivity() {
                 composable("welcome") {
                     Welcome(navController)
                 }
-                composable("SignIn"){
+                composable("SignIn") {
                     SignIn(navController)
                 }
-                composable("Home"){
+                composable("Home") {
                     Home(navController)
                 }
-                composable("ForgotPassword"){
+                composable("ForgotPassword") {
                     ForgotPassword(navController)
                 }
 

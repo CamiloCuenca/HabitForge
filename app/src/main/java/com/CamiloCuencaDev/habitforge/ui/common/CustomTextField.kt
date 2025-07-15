@@ -1,3 +1,5 @@
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -10,6 +12,7 @@ import com.CamiloCuencaDev.habitforge.ui.theme.Grey80
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun CustomTextField(
@@ -47,7 +50,8 @@ fun CustomPasswordField(
     onPasswordChange: (String) -> Unit,
     placeholder: String,
 ) {
-    var passwordVisible = androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    var passwordVisible =
+        androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
 
     TextField(
         value = password,
@@ -62,7 +66,9 @@ fun CustomPasswordField(
             else
                 androidx.compose.material.icons.Icons.Filled.VisibilityOff
 
-            androidx.compose.material3.IconButton(onClick = { passwordVisible.value = !passwordVisible.value }) {
+            androidx.compose.material3.IconButton(onClick = {
+                passwordVisible.value = !passwordVisible.value
+            }) {
                 androidx.compose.material3.Icon(imageVector = image, contentDescription = null)
             }
         },
@@ -92,7 +98,7 @@ fun SearchTextField(
     TextField(
         value = query,
         onValueChange = onQueryChange,
-        placeholder = {Text(placeholder)},
+        placeholder = { Text(placeholder) },
         trailingIcon = {
             androidx.compose.material3.IconButton(onClick = {}) {
                 androidx.compose.material3.Icon(
@@ -100,7 +106,22 @@ fun SearchTextField(
                     contentDescription = null
                 )
             }
-        }
+        },
+        modifier = Modifier.fillMaxWidth(),
+        colors = androidx.compose.material3.TextFieldDefaults.colors(
+            cursorColor = GreenPrimary,
+            focusedIndicatorColor = GreenPrimary,
+            unfocusedIndicatorColor = BlueSecondary,
+            disabledIndicatorColor = GreenPrimaryLight,
+            focusedLabelColor = GreenPrimary,
+            unfocusedLabelColor = BlueSecondary,
+            disabledLabelColor = GreenPrimaryLight,
+            focusedContainerColor = Grey80,
+            unfocusedContainerColor = Grey80,
+            disabledContainerColor = GreenPrimaryLight,
+            focusedTextColor = GreenDark,
+            disabledTextColor = GreenPrimaryLight
+        )
 
     )
 }
